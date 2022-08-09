@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login_fragment">
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.jeffreycarrion_billtracker.view.LoginFragment">
+        <action
+            android:id="@+id/action_login_page_to_calendar_fragment"
+            app:destination="@id/calendar_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_create_account_fragment"
+            app:destination="@id/create_account_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calendar_fragment"
+        android:name="com.example.jeffreycarrion_billtracker.view.CalendarFragment">
+
+        <action
+            android:id="@+id/action_calendar_fragment_to_bill_fragment"
+            app:destination="@id/bill_fragment" />
+        <action
+            android:id="@+id/action_calendar_fragment_to_event_fragment"
+            app:destination="@id/event_fragment" />
+    </fragment>
+
+    <fragment android:id="@+id/bill_fragment"
+        android:name="com.example.jeffreycarrion_billtracker.view.BillFragment">
+        <action
+            android:id="@+id/action_bill_fragment_to_event_fragment"
+            app:destination="@id/event_fragment" />
+        <action
+            android:id="@+id/action_bill_fragment_to_calendar_fragment"
+            app:destination="@id/calendar_fragment" />
+    </fragment>
+
+    <fragment android:id="@+id/event_fragment"
+        android:name="com.example.jeffreycarrion_billtracker.view.EventFragment">
+        <action
+            android:id="@+id/action_event_fragment_to_bill_fragment"
+            app:destination="@id/bill_fragment" />
+    </fragment>
+
+    <fragment android:id="@+id/create_account_fragment"
+        android:name="com.example.jeffreycarrion_billtracker.view.CreateAccountFragment">
+        <action
+            android:id="@+id/action_create_account_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+</navigation>

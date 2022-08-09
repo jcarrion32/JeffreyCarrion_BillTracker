@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+
+    <LinearLayout
+        android:id="@+id/ll_city_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back_bill"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/purple_500"
+            android:src="@drawable/back_arrow_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical"
+            android:paddingStart="30dp"
+            android:text="Add New Bill"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="@+id/btn_back_main"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_bill_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:hint="   Add Bill Name"
+        android:ems="13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <DatePicker
+        android:id="@+id/dd_payday"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_bill_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_amount_due"
+        app:layout_constraintEnd_toStartOf="@+id/et_amount_due"
+        app:layout_constraintTop_toTopOf="@+id/et_amount_due" />
+
+    <EditText
+        android:id="@+id/et_amount_due"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="5"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/dd_payday"
+        app:layout_constraintTop_toBottomOf="@id/dd_payday"
+        android:hint="Among Due"/>
+
+
+    <Button
+        android:id="@+id/btn_add_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_amount_due"
+        app:layout_constraintTop_toBottomOf="@+id/et_amount_due"
+        android:backgroundTint="@color/purple_500"
+        android:text="add account"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
