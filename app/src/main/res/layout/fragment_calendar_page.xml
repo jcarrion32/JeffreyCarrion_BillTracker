@@ -5,22 +5,33 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg">
 
-    <CalendarView
-        android:id="@+id/cv_bills_calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/btn_back_income"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#006200EE"
+        android:src="@drawable/back_arrow_foreground"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+<!--    <CalendarView-->
+<!--        android:id="@+id/cv_bills_calendar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
         android:id="@+id/btn_bills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="bill list"
-        android:backgroundTint="#2C9AEF"
         android:layout_marginEnd="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/cv_bills_calendar"
+        android:backgroundTint="#ED002F"
+        android:text="bill list"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_calendar_event"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        app:layout_constraintTop_toTopOf="@+id/btn_calendar_event" />
 
     <Button
         android:id="@+id/btn_calendar_event"
@@ -31,6 +42,66 @@
         android:text="+"
         android:backgroundTint="#18DC20"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_bills_calendar"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_back_income"/>
+
+    <TextView
+        android:id="@+id/tv_calendar_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_calendar_event"
+        app:layout_constraintStart_toStartOf="@id/btn_calendar_event"
+        android:text="Income amount"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_calendar_income2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_calendar_income"
+        app:layout_constraintStart_toEndOf="@+id/tv_calendar_income"
+        app:layout_constraintTop_toTopOf="@+id/tv_calendar_income"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_calendar_bill_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_calendar_income"
+        app:layout_constraintStart_toStartOf="@id/tv_calendar_income"
+        android:text="Bills amount"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_calendar_bill_amount2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_calendar_bill_amount"
+        app:layout_constraintStart_toEndOf="@+id/tv_calendar_bill_amount"
+        app:layout_constraintTop_toTopOf="@+id/tv_calendar_bill_amount"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_bills_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_calendar_bill_amount"
+        app:layout_constraintStart_toStartOf="@id/tv_calendar_bill_amount"
+        android:text="Bills total"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tv_bills_total2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_bills_total"
+        app:layout_constraintStart_toEndOf="@+id/tv_bills_total"
+        app:layout_constraintTop_toTopOf="@+id/tv_bills_total"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

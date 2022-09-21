@@ -24,14 +24,18 @@ class LoginFragment : ViewModelFragment() {
         binding.btnLogin.setOnClickListener {
 
             userAuthentication()
-//            findNavController().navigate(
-//                LoginFragmentDirections.actionLoginPageToCalendarFragment()
-//            )
+
         }
 
         binding.btnRegisterAccount.setOnClickListener {
             findNavController().navigate(
                 LoginFragmentDirections.actionLoginFragmentToCreateAccountFragment()
+            )
+        }
+
+        binding.btnBypass.setOnClickListener {
+            findNavController().navigate(
+                LoginFragmentDirections.actionLoginFragmentToIncomeFragment()
             )
         }
 
@@ -48,10 +52,8 @@ class LoginFragment : ViewModelFragment() {
             )
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-
-                        Toast.makeText(context, " User is Authenticated", Toast.LENGTH_SHORT).show()
                         binding.txtError.visibility = View.GONE
-                        findNavController().navigate(LoginFragmentDirections.actionLoginPageToCalendarFragment())
+                        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToIncomeFragment())
 
                     } else {
                         binding.txtError.visibility = View.VISIBLE

@@ -13,7 +13,7 @@
         android:src="@drawable/back_arrow_foreground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/teal_200"/>
+        android:backgroundTint="#0003DAC5"/>
 
     <TextView
         android:layout_width="wrap_content"

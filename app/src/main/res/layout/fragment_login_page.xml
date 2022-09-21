@@ -5,6 +5,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg">
 
+    <Button
+        android:id="@+id/btn_bypass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="bypass"
+        android:backgroundTint="#00FFFFFF"
+        android:layout_margin="10dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

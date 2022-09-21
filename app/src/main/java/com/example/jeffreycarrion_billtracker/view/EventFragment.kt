@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.cesarferreira.tempo.Tempo
 import com.example.jeffreycarrion_billtracker.databinding.FragmentEventPageBinding
 import com.example.jeffreycarrion_billtracker.model.database.BillEntity
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class EventFragment: ViewModelFragment() {
 
     private lateinit var binding: FragmentEventPageBinding
+    private val args: EventFragmentArgs by navArgs()
+    private var today = Tempo.now
 
 
     override fun onCreateView(
@@ -30,35 +32,31 @@ class EventFragment: ViewModelFragment() {
          //today's date
 
 
-
         binding.btnAddAccount.setOnClickListener{
 
             val billName = binding.etBillName.text.toString()
-            //val amountDue = binding.etAmountDue.text.toString().format("%.2f").toDouble()
 
-            var amountDue = String.format("%.2f", binding.etAmountDue.text.toString().toDouble()).toDouble()
-            var dueDate = binding.ddPayday.dayOfMonth.toString()
+            val amountDue = String.format("%.2f", binding.etAmountDue.text.toString().toDouble()).toDouble()
+            val dueDate = binding.ddPayday.dayOfMonth.toString()
 
             val account = BillEntity(0, billName, dueDate, amountDue)
 
             viewModel.insertNewBill(account)
 
             findNavController().navigate(
-                EventFragmentDirections.actionEventFragmentToBillFragment()
+                EventFragmentDirections.actionEventFragmentToBillFragment(args.incomeAmount, args.incomePayday, args.incomeFreq)
             )
         }
 
         binding.btnBackBill.setOnClickListener{
             findNavController().navigate(
-                EventFragmentDirections.actionEventFragmentToBillFragment()
+                EventFragmentDirections.actionEventFragmentToBillFragment(args.incomeAmount, args.incomePayday, args.incomeFreq)
             )
         }
 
         return binding.root
     }
 
-//    companion object {
-//        const val EXTRA_REPLY = "com.example.roomcodelab.REPLY"
-//    }
+
 
 }

@@ -7,7 +7,7 @@
 
 
     <LinearLayout
-        android:id="@+id/ll_city_top_bar"
+        android:id="@+id/ll_bill_top_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/purple_500"
@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/title_city"
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="12dp"

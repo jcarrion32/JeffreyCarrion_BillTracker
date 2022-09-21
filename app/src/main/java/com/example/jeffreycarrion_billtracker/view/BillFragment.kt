@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jeffreycarrion_billtracker.databinding.FragmentBillPageBinding
@@ -16,6 +17,7 @@ class BillFragment : ViewModelFragment() {
     private val billListAdapter by lazy {
         BillListAdapter(deleteBillFromList = ::deleteBillFromList)
     }
+    private val args: BillFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,13 +33,13 @@ class BillFragment : ViewModelFragment() {
 
         binding.btnAddNewBill.setOnClickListener {
             findNavController().navigate(
-                BillFragmentDirections.actionBillFragmentToEventFragment()
+                BillFragmentDirections.actionBillFragmentToEventFragment(args.incomeAmount, args.incomePayday, args.incomeFreq)
             )
         }
 
         binding.btnBackMain.setOnClickListener {
             findNavController().navigate(
-                BillFragmentDirections.actionBillFragmentToCalendarFragment()
+                BillFragmentDirections.actionBillFragmentToCalendarFragment(args.incomeAmount, args.incomePayday, args.incomeFreq)
             )
         }
 

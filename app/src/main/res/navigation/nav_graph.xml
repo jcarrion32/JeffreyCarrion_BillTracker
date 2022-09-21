@@ -7,12 +7,13 @@
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.example.jeffreycarrion_billtracker.view.LoginFragment">
-        <action
-            android:id="@+id/action_login_page_to_calendar_fragment"
-            app:destination="@id/calendar_fragment" />
+
         <action
             android:id="@+id/action_login_fragment_to_create_account_fragment"
             app:destination="@id/create_account_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_incomeFragment"
+            app:destination="@id/incomeFragment" />
     </fragment>
 
     <fragment
@@ -25,6 +26,19 @@
         <action
             android:id="@+id/action_calendar_fragment_to_event_fragment"
             app:destination="@id/event_fragment" />
+
+        <argument
+            app:argType="string"
+            android:name="income_amount"/>
+        <argument
+            app:argType="string"
+            android:name="income_payday"/>
+        <argument
+            app:argType="string"
+            android:name="income_freq"/>
+        <action
+            android:id="@+id/action_calendar_fragment_to_incomeFragment"
+            app:destination="@id/incomeFragment" />
     </fragment>
 
     <fragment android:id="@+id/bill_fragment"
@@ -35,6 +49,16 @@
         <action
             android:id="@+id/action_bill_fragment_to_calendar_fragment"
             app:destination="@id/calendar_fragment" />
+
+        <argument
+            app:argType="string"
+            android:name="income_amount"/>
+        <argument
+            app:argType="string"
+            android:name="income_payday"/>
+        <argument
+            app:argType="string"
+            android:name="income_freq"/>
     </fragment>
 
     <fragment android:id="@+id/event_fragment"
@@ -42,6 +66,15 @@
         <action
             android:id="@+id/action_event_fragment_to_bill_fragment"
             app:destination="@id/bill_fragment" />
+        <argument
+            app:argType="string"
+            android:name="income_amount"/>
+        <argument
+            app:argType="string"
+            android:name="income_payday"/>
+        <argument
+            app:argType="string"
+            android:name="income_freq"/>
     </fragment>
 
     <fragment android:id="@+id/create_account_fragment"
@@ -49,5 +82,17 @@
         <action
             android:id="@+id/action_create_account_fragment_to_login_fragment"
             app:destination="@id/login_fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/incomeFragment"
+        android:name="com.example.jeffreycarrion_billtracker.view.IncomeFragment" >
+        <action
+            android:id="@+id/action_incomeFragment_to_calendar_fragment"
+            app:destination="@id/calendar_fragment" />
+        <action
+            android:id="@+id/action_incomeFragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+
     </fragment>
 </navigation>

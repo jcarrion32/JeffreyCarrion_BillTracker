@@ -21,31 +21,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DI {
-//    private var appContext: Context? = null
-//
-//    fun setAppContext(context: Context): Context {
-//        appContext = context
-//        return appContext
-//    }
-//
-//    private val applicationScope = CoroutineScope(SupervisorJob())
-//
-//    private val database by lazy {
-//        BillDatabase.getDatabase(setAppContext(appContext), applicationScope)
-//    }
-//
-//    val repository by lazy {
-//        BillRepo(database.billDao())
-//    }
-//
-//
-//    fun providerViewModel(storeOwner: ViewModelStoreOwner): BillViewModel {
-//        return ViewModelProvider(storeOwner, object: ViewModelProvider.Factory{
-//            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-//                return return modelClass.getConstructor(BillRepo::class.java).newInstance(repository)
-//            }
-//        })[BillViewModel::class.java]
-//    }
 
     @Singleton
     @Provides
@@ -61,13 +36,4 @@ object DI {
     @Provides
     fun provideDao(db: BillDatabase) = db.billDao()
 
-
 }
-
-//class ViewModelFactory(
-//    private val repo: BillRepo
-//) : ViewModelProvider.Factory {
-//    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-//        return modelClass.getConstructor(BillRepo::class.java).newInstance(repo)
-//    }
-//}
