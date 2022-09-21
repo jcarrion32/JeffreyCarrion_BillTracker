@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_income_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_exit"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/purple_500"
+            android:src="@drawable/back_arrow_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Add Income"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="@+id/btn_back_main"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+    <DatePicker
+        android:id="@+id/dd_income_payday"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_income_top_bar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_income"
+        app:layout_constraintEnd_toStartOf="@+id/et_income"
+        app:layout_constraintTop_toTopOf="@+id/et_income" />
+
+    <EditText
+        android:id="@+id/et_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="5"
+        android:hint="Income"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/dd_income_payday"
+        app:layout_constraintTop_toBottomOf="@id/dd_income_payday"
+        android:textAlignment="textEnd"/>
+
+    <RadioGroup
+        android:id="@+id/rg_income_freq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_income"
+        app:layout_constraintStart_toStartOf="@+id/et_income"
+        app:layout_constraintTop_toBottomOf="@+id/et_income">
+
+        <RadioButton
+            android:id="@+id/rb_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekly" />
+
+        <RadioButton
+            android:id="@+id/rb_biweekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bi-weekly" />
+
+        <RadioButton
+            android:id="@+id/rb_twice_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15-30 's" />
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_clear_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EE0030"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_add_income"
+        app:layout_constraintEnd_toStartOf="@+id/btn_add_income"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_add_income" />
+
+    <Button
+        android:id="@+id/btn_add_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="add income"
+        app:layout_constraintEnd_toEndOf="@+id/rg_income_freq"
+        app:layout_constraintTop_toBottomOf="@+id/rg_income_freq" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
